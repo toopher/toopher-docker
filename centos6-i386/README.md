@@ -8,13 +8,12 @@ docker build .
 ```
 
 ## Refreshing the tarball
-To build the tarball that is referenced in `Dockerfile` we use Vagrant to build up a CentOS VM that can run through docker's [`mkimage-yum`](https://github.com/docker/docker/blob/master/contrib/mkimage-yum.sh) steps.  Here's how that's done:
+To build the tarball that is referenced in the `Dockerfile` we use Vagrant to build up a CentOS VM that can run through docker's [`mkimage-yum`](https://github.com/docker/docker/blob/master/contrib/mkimage-yum.sh) steps.  Here's how that's done:
 
 ```
 vagrant up
 vagrant ssh
 cd /vagrant
-chmod u+x make-docker-image.sh
 sudo ./make-docker-image.sh
 exit
 vagrant -f destroy
