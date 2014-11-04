@@ -1,0 +1,22 @@
+# Ubuntu 12.04 i386 Build
+Docker hub doesn't publish 32-bit Ubuntu builds, so this sets up a Docker Automated Build to create our own.
+
+## Docker
+To build the image, merely invoke docker as follows:
+```
+docker build .
+```
+
+## Refreshing the tarball
+To build the tarball that is referenced in the `Dockerfile` we use Vagrant to build up a Debian VM that can run through docker's [`mkimage-debootstrap`](https://github.com/docker/docker/blob/master/contrib/mkimage/debootstrap) steps.  Here's how that's done:
+
+```
+vagrant up
+vagrant ssh
+cd /vagrant
+sudo ./make-docker-image.sh
+exit
+vagrant -f destroy
+```
+
+This will dump the tarball back in this directory where it can then be used to build the docker image as described above.
