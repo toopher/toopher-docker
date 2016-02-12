@@ -1,4 +1,4 @@
-# CentOS 6 i386 Build
+# CentOS 5 i386 Build
 Docker hub doesn't publish 32-bit CentOS builds, so this sets up a Docker Automated Build to create our own.
 
 ## Docker

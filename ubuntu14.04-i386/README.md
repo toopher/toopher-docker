@@ -1,4 +1,4 @@
-# Ubuntu 12.04 i386 Build
+# Ubuntu 14.04 i386 Build
 Docker hub doesn't publish 32-bit Ubuntu builds, so this sets up a Docker Automated Build to create our own.
 
 ## Docker
